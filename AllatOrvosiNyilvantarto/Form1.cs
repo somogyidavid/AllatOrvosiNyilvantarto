@@ -14,9 +14,13 @@ namespace AllatOrvosiNyilvantarto
     public partial class Form1 : Form
     {
         private bool SelectionChangedByMe = false;
+
         public Form1()
         {
             InitializeComponent();
+            Tulajdonosok.TulajdonosFelvetele("Somogyi", "Dávid", DateTime.ParseExact("2000.03.08", "yyyy.mm.dd", null), "2660", "Balassagyarmat", "Szabó Püspök u.", "+36307415497");
+            Tulajdonosok.TulajdonosFelvetele("Somogyi", "Dávid", DateTime.ParseExact("2000.03.08", "yyyy.mm.dd", null), "2660", "Balassagyarmat", "Szabó Püspök u.", "+36307415497");
+
         }
 
         private void tulajdonosokToolStripMenuItem_Click(object sender, EventArgs e)
@@ -31,13 +35,17 @@ namespace AllatOrvosiNyilvantarto
             {
                 TulajdonosokDGVLetrehozas();
                 TulajdonosokFeltoltese();
+                TablazatGombokLetrehozasa();
+                dgvTulajdonosok.AutoResizeColumns();
             }
             else MessageBox.Show("A lista üres!","Hiba");
         }
 
         public void TulajdonosokDGVLetrehozas()
         {
-            dgvTulajdonosok.Columns.Add("Id", "Azonosító");
+            dgvTulajdonosok.AutoGenerateColumns = false;
+
+            dgvTulajdonosok.Columns.Add("Id", "ID");
             dgvTulajdonosok.Columns.Add("Vnev", "Vezetéknév");
             dgvTulajdonosok.Columns.Add("Knev", "Keresztnév");
             dgvTulajdonosok.Columns.Add("SzulDatum", "Születési dátum");
@@ -51,6 +59,7 @@ namespace AllatOrvosiNyilvantarto
         public void TulajdonosokFeltoltese()
         {
             dgvTulajdonosok.Rows.Clear();
+            SelectionChangedByMe = false;
             if (Tulajdonosok.TulajdonosokLista.Count > 0)
             {
                 foreach (Tulajdonos tulajdonos in Tulajdonosok.TulajdonosokLista)
@@ -81,24 +90,58 @@ namespace AllatOrvosiNyilvantarto
             MessageBox.Show("Készítette: Somogyi Dávid\nEszterházy Károly Egyetem\nHallgató\n2020", "Súgó");
         }
 
+        private void TablazatGombokLetrehozasa()
+        {
+            DataGridViewButtonColumn dgvbcModosit = new DataGridViewButtonColumn();
+            dgvbcModosit.Text = "Módosít";
+            dgvbcModosit.Name = "dgvbcModosit";
+            dgvbcModosit.HeaderText = "Módosítás";
+            dgvbcModosit.UseColumnTextForButtonValue = true;
+            dgvTulajdonosok.Columns.Add(dgvbcModosit);
+
+            DataGridViewButtonColumn dgvbcTorol = new DataGridViewButtonColumn();
+            dgvbcTorol.Text = "Töröl";
+            dgvbcTorol.Name = "dgvbcTorol";
+            dgvbcTorol.HeaderText = "Törlés";
+            dgvbcTorol.UseColumnTextForButtonValue = true;
+            
+            dgvTulajdonosok.Columns.Add(dgvbcTorol);
+        }
+
+        private void dgvTulajdonosok_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            DataGridView dgv = sender as DataGridView;
+            switch (dgv.Columns[e.ColumnIndex].Name)
+            {
+                case "dgvbcModosit":
+                    MessageBox.Show("Módosító ablak");
+                    break;
+                case "dgvbcTorol":
+                    MessageBox.Show("Törlés visszakérdezés");
+                    break;
+            }
+        }
+
         private void dgvTulajdonosok_SelectionChanged(object sender, EventArgs e)
         {
             if (SelectionChangedByMe)
             {
                 DataGridView dgv = sender as DataGridView;
-                if(dgv != null || dgv.SelectedRows.Count == 1)
+                if (dgv != null && dgv.SelectedRows.Count > 0)
                 {
                     DataGridViewRow row = dgv.SelectedRows[0];
-                    if(row != null)
+                    if (row != null)
                     {
                         int Id = int.Parse(row.Cells["Id"].Value.ToString());
-                        foreach(Tulajdonos tulajdonos in Tulajdonosok.TulajdonosokLista)
+                        foreach (Tulajdonos tulajdonos in Tulajdonosok.TulajdonosokLista)
                         {
-                            //OPENDIALOG
+                            if (tulajdonos.Id == Id)
+                                MessageBox.Show("Details ablak");
                         }
                     }
                 }
             }
+            SelectionChangedByMe = true;
         }
     }
 }
