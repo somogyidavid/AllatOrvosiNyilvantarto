@@ -20,7 +20,7 @@ namespace AllatOrvosiNyilvantarto
 			this.Lakcim = Lakcim;
 			this.MobilSzam = MobilSzam;
 		}
-		public Tulajdonos(uint Id, string Vnev, string Knev, DateTime SzulDatum, string Irszam, string Varos, string Lakcim, string MobilSzam, MailAddress Email)
+		public Tulajdonos(uint Id, string Vnev, string Knev, DateTime SzulDatum, string Irszam, string Varos, string Lakcim, string MobilSzam, string Email)
 			:this(Id, Vnev, Knev, SzulDatum, Irszam, Varos, Lakcim, MobilSzam)
 		{
 			this.Email = Email;
@@ -134,19 +134,20 @@ namespace AllatOrvosiNyilvantarto
 			{
 				if (value == null)
 					throw new Exception("A mobilszám nem lehet null!");
-				value = value.Trim('-', ' ');
-				if(!value.StartsWith("+36") || !value.StartsWith("06"))
+				value = value.Replace("-", "").Replace(" ", "");
+				//throw new Exception(value.ToString());
+				if(!value.StartsWith("+36") && !value.StartsWith("06"))
 					throw new Exception("Hibás telefonszám formátum!");
 				if (value.StartsWith("+36") && value.Length != 12)
 					throw new Exception("Hibás telefonszám formátum!");
-				else if (value.StartsWith("06") && value.Length != 11)
+				if (value.StartsWith("06") && value.Length != 11)
 					throw new Exception("Hibás telefonszám formátum!");
 				mobilSzam = value;
 			}
 		}
-		private MailAddress email;
+		private string email;
 
-		public MailAddress Email
+		public string Email
 		{
 			get { return email; }
 			set

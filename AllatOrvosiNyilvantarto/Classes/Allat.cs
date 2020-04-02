@@ -27,6 +27,7 @@ namespace AllatOrvosiNyilvantarto
 			{
 				if (value < 1)
 					throw new Exception("Az azonosító nem lehet kisebb mint 1!");
+				id = value;
 			}
 		}
 		private string  nev;

@@ -1,0 +1,11 @@
+D:\!Egyetem\2019-2020\2. félév\Magasszintű programozási nyelvek II\AllatOrvosiNyilvantarto\AllatOrvosiNyilvantarto\bin\Debug\AllatOrvosiNyilvantarto.exe.config
+D:\!Egyetem\2019-2020\2. félév\Magasszintű programozási nyelvek II\AllatOrvosiNyilvantarto\AllatOrvosiNyilvantarto\bin\Debug\AllatOrvosiNyilvantarto.exe
+D:\!Egyetem\2019-2020\2. félév\Magasszintű programozási nyelvek II\AllatOrvosiNyilvantarto\AllatOrvosiNyilvantarto\bin\Debug\AllatOrvosiNyilvantarto.pdb
+D:\!Egyetem\2019-2020\2. félév\Magasszintű programozási nyelvek II\AllatOrvosiNyilvantarto\AllatOrvosiNyilvantarto\obj\Debug\AllatOrvosiNyilvantarto.csprojAssemblyReference.cache
+D:\!Egyetem\2019-2020\2. félév\Magasszintű programozási nyelvek II\AllatOrvosiNyilvantarto\AllatOrvosiNyilvantarto\obj\Debug\AllatOrvosiNyilvantarto.Form1.resources
+D:\!Egyetem\2019-2020\2. félév\Magasszintű programozási nyelvek II\AllatOrvosiNyilvantarto\AllatOrvosiNyilvantarto\obj\Debug\AllatOrvosiNyilvantarto.Properties.Resources.resources
+D:\!Egyetem\2019-2020\2. félév\Magasszintű programozási nyelvek II\AllatOrvosiNyilvantarto\AllatOrvosiNyilvantarto\obj\Debug\AllatOrvosiNyilvantarto.TulajdonosFelvetel.resources
+D:\!Egyetem\2019-2020\2. félév\Magasszintű programozási nyelvek II\AllatOrvosiNyilvantarto\AllatOrvosiNyilvantarto\obj\Debug\AllatOrvosiNyilvantarto.csproj.GenerateResource.cache
+D:\!Egyetem\2019-2020\2. félév\Magasszintű programozási nyelvek II\AllatOrvosiNyilvantarto\AllatOrvosiNyilvantarto\obj\Debug\AllatOrvosiNyilvantarto.csproj.CoreCompileInputs.cache
+D:\!Egyetem\2019-2020\2. félév\Magasszintű programozási nyelvek II\AllatOrvosiNyilvantarto\AllatOrvosiNyilvantarto\obj\Debug\AllatOrvosiNyilvantarto.exe
+D:\!Egyetem\2019-2020\2. félév\Magasszintű programozási nyelvek II\AllatOrvosiNyilvantarto\AllatOrvosiNyilvantarto\obj\Debug\AllatOrvosiNyilvantarto.pdb
