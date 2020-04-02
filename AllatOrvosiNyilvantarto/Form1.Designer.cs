@@ -31,26 +31,32 @@
             this.dgvTulajdonosok = new System.Windows.Forms.DataGridView();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fájlToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.fájlBeolvasásaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.beállításokToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.kilépésToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.szerkesztésToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tulajdonosokToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.súgóToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.összesTulajdonosListázásaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tulajdonosKereséseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.frissítésToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.fájlBeolvasásaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.súgóToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTulajdonosok)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // dgvTulajdonosok
             // 
+            this.dgvTulajdonosok.AllowUserToAddRows = false;
+            this.dgvTulajdonosok.AllowUserToDeleteRows = false;
             this.dgvTulajdonosok.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvTulajdonosok.Location = new System.Drawing.Point(12, 43);
             this.dgvTulajdonosok.Name = "dgvTulajdonosok";
-            this.dgvTulajdonosok.Size = new System.Drawing.Size(985, 403);
+            this.dgvTulajdonosok.ReadOnly = true;
+            this.dgvTulajdonosok.RowHeadersVisible = false;
+            this.dgvTulajdonosok.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvTulajdonosok.Size = new System.Drawing.Size(1050, 584);
             this.dgvTulajdonosok.TabIndex = 1;
+            this.dgvTulajdonosok.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTulajdonosok_CellContentClick);
             this.dgvTulajdonosok.SelectionChanged += new System.EventHandler(this.dgvTulajdonosok_SelectionChanged);
             // 
             // menuStrip1
@@ -62,7 +68,7 @@
             this.súgóToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1009, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1074, 24);
             this.menuStrip1.TabIndex = 2;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -76,16 +82,22 @@
             this.fájlToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
             this.fájlToolStripMenuItem.Text = "Fájl";
             // 
+            // fájlBeolvasásaToolStripMenuItem
+            // 
+            this.fájlBeolvasásaToolStripMenuItem.Name = "fájlBeolvasásaToolStripMenuItem";
+            this.fájlBeolvasásaToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.fájlBeolvasásaToolStripMenuItem.Text = "Fájl beolvasása";
+            // 
             // beállításokToolStripMenuItem
             // 
             this.beállításokToolStripMenuItem.Name = "beállításokToolStripMenuItem";
-            this.beállításokToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.beállításokToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.beállításokToolStripMenuItem.Text = "Beállítások";
             // 
             // kilépésToolStripMenuItem
             // 
             this.kilépésToolStripMenuItem.Name = "kilépésToolStripMenuItem";
-            this.kilépésToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.kilépésToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.kilépésToolStripMenuItem.Text = "Kilépés";
             this.kilépésToolStripMenuItem.Click += new System.EventHandler(this.kilépésToolStripMenuItem_Click);
             // 
@@ -105,13 +117,6 @@
             this.tulajdonosokToolStripMenuItem.Size = new System.Drawing.Size(214, 22);
             this.tulajdonosokToolStripMenuItem.Text = "Új tulajdonos felvétele";
             this.tulajdonosokToolStripMenuItem.Click += new System.EventHandler(this.tulajdonosokToolStripMenuItem_Click);
-            // 
-            // súgóToolStripMenuItem
-            // 
-            this.súgóToolStripMenuItem.Name = "súgóToolStripMenuItem";
-            this.súgóToolStripMenuItem.Size = new System.Drawing.Size(46, 20);
-            this.súgóToolStripMenuItem.Text = "Súgó";
-            this.súgóToolStripMenuItem.Click += new System.EventHandler(this.súgóToolStripMenuItem_Click);
             // 
             // összesTulajdonosListázásaToolStripMenuItem
             // 
@@ -133,18 +138,19 @@
             this.frissítésToolStripMenuItem.Text = "Frissítés";
             this.frissítésToolStripMenuItem.Click += new System.EventHandler(this.frissítésToolStripMenuItem_Click);
             // 
-            // fájlBeolvasásaToolStripMenuItem
+            // súgóToolStripMenuItem
             // 
-            this.fájlBeolvasásaToolStripMenuItem.Name = "fájlBeolvasásaToolStripMenuItem";
-            this.fájlBeolvasásaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.fájlBeolvasásaToolStripMenuItem.Text = "Fájl beolvasása";
+            this.súgóToolStripMenuItem.Name = "súgóToolStripMenuItem";
+            this.súgóToolStripMenuItem.Size = new System.Drawing.Size(46, 20);
+            this.súgóToolStripMenuItem.Text = "Súgó";
+            this.súgóToolStripMenuItem.Click += new System.EventHandler(this.súgóToolStripMenuItem_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1009, 463);
+            this.ClientSize = new System.Drawing.Size(1074, 639);
             this.Controls.Add(this.dgvTulajdonosok);
             this.Controls.Add(this.menuStrip1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
