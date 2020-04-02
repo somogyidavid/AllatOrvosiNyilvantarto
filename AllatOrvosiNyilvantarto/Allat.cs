@@ -8,6 +8,16 @@ namespace AllatOrvosiNyilvantarto
 {
     abstract class Allat
     {
+		public Allat(uint Id, string Nev, DateTime SzulDatum, AllatNem Nem, bool Ivartalanitva, List<Kezeles> Kezelesek)
+		{
+			this.Id = Id;
+			this.Nev = Nev;
+			this.SzulDatum = SzulDatum;
+			this.Nem = Nem;
+			this.Ivartalanitva = Ivartalanitva;
+			this.Kezelesek = Kezelesek;
+		}
+
 		private uint id;
 
 		public uint Id
@@ -64,7 +74,20 @@ namespace AllatOrvosiNyilvantarto
 				else throw new Exception("Az érték már meg lett változtatva!");
 			}
 		}
-		
-		//TODO: Kezelések listája
+
+		private List<Kezeles> kezelesek;
+
+		public List<Kezeles> Kezelesek
+		{
+			get
+			{
+				return new List<Kezeles>(kezelesek);
+			}
+			private set
+			{
+				kezelesek = value;
+			}
+		}
+
 	}
 }

@@ -8,6 +8,15 @@ namespace AllatOrvosiNyilvantarto
 {
     class Kutya : Allat
     {
+		public Kutya(uint Id, string Nev, DateTime SzulDatum, AllatNem Nem, bool Ivartalanitva, List<Kezeles> Kezelesek, string Fajta, bool VanChipje, string ChipAzonosito, List<Oltas> BeadottOltasok)
+			:base(Id, Nev, SzulDatum, Nem, Ivartalanitva, Kezelesek)
+		{
+			this.Fajta = Fajta;
+			this.VanChipje = VanChipje;
+			this.ChipAzonosito = ChipAzonosito;
+			this.BeadottOltasok = BeadottOltasok;
+		}
+
 		private string fajta;
 
 		public string Fajta
@@ -54,6 +63,18 @@ namespace AllatOrvosiNyilvantarto
 			}
 		}
 
-		//TODO: Beadott oltások listája
+		private List<Oltas> beadottOltasok;
+
+		public List<Oltas> BeadottOltasok
+		{
+			get
+			{
+				return new List<Oltas>(beadottOltasok);
+			}
+			private set
+			{
+				beadottOltasok = value;
+			}
+		}
 	}
 }
