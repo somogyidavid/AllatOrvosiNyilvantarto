@@ -70,6 +70,12 @@
     <Compile Include="TulajdonosFelvetel.Designer.cs">
       <DependentUpon>TulajdonosFelvetel.cs</DependentUpon>
     </Compile>
+    <Compile Include="TulajdonosMegtekintes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TulajdonosMegtekintes.Designer.cs">
+      <DependentUpon>TulajdonosMegtekintes.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -84,6 +90,9 @@
     </Compile>
     <EmbeddedResource Include="TulajdonosFelvetel.resx">
       <DependentUpon>TulajdonosFelvetel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TulajdonosMegtekintes.resx">
+      <DependentUpon>TulajdonosMegtekintes.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

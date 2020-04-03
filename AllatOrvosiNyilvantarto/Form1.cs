@@ -54,6 +54,7 @@ namespace AllatOrvosiNyilvantarto
             dgvTulajdonosok.Columns.Add("Lakcim", "Lakcím");
             dgvTulajdonosok.Columns.Add("MobilSzam", "Mobilszám");
             dgvTulajdonosok.Columns.Add("Email", "Email");
+
         }
 
         public void TulajdonosokFeltoltese()
@@ -65,13 +66,14 @@ namespace AllatOrvosiNyilvantarto
                 foreach (Tulajdonos tulajdonos in Tulajdonosok.TulajdonosokLista)
                 {
                     if(tulajdonos.Email == null)
-                        dgvTulajdonosok.Rows.Add(new object[] { tulajdonos.Id, tulajdonos.Vnev, tulajdonos.Knev, tulajdonos.SzulDatum,
+                        dgvTulajdonosok.Rows.Add(new object[] { tulajdonos.Id, tulajdonos.Vnev, tulajdonos.Knev, tulajdonos.SzulDatum.ToString("yyyy.mm.dd"),
                             tulajdonos.Irszam, tulajdonos.Varos,tulajdonos.Lakcim,tulajdonos.MobilSzam,"-"});
                     else dgvTulajdonosok.Rows.Add(new object[] { tulajdonos.Id, tulajdonos.Vnev, tulajdonos.Knev, tulajdonos.SzulDatum,
                             tulajdonos.Irszam, tulajdonos.Varos,tulajdonos.Lakcim,tulajdonos.MobilSzam, tulajdonos.Email});
                 }
             }
             else MessageBox.Show("A lista üres!","Hiba");
+            
             dgvTulajdonosok.Rows[0].Selected = false;
             dgvTulajdonosok.AutoResizeColumns();
         }
@@ -138,7 +140,7 @@ namespace AllatOrvosiNyilvantarto
                         {
                             if (tulajdonos.Id == Id)
                             {
-                                TulajdonosMegtekintes TM = new TulajdonosMegtekintes();
+                                TulajdonosMegtekintes TM = new TulajdonosMegtekintes(int.Parse(row.Cells["Id"].Value.ToString()));
                                 TM.ShowDialog();
                                 dgvTulajdonosok.SelectedRows[0].Selected = false;
                             }
@@ -167,5 +169,6 @@ namespace AllatOrvosiNyilvantarto
         {
             dgvTulajdonosok.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
         }
+
     }
 }

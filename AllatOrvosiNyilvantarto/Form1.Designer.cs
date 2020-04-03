@@ -48,6 +48,7 @@
             // 
             this.dgvTulajdonosok.AllowUserToAddRows = false;
             this.dgvTulajdonosok.AllowUserToDeleteRows = false;
+            this.dgvTulajdonosok.AllowUserToResizeRows = false;
             this.dgvTulajdonosok.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvTulajdonosok.Location = new System.Drawing.Point(12, 43);
             this.dgvTulajdonosok.Name = "dgvTulajdonosok";
@@ -57,6 +58,8 @@
             this.dgvTulajdonosok.Size = new System.Drawing.Size(1050, 584);
             this.dgvTulajdonosok.TabIndex = 1;
             this.dgvTulajdonosok.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTulajdonosok_CellContentClick);
+            this.dgvTulajdonosok.CellMouseLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTulajdonosok_CellMouseLeave);
+            this.dgvTulajdonosok.CellMouseMove += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvTulajdonosok_CellMouseMove);
             this.dgvTulajdonosok.SelectionChanged += new System.EventHandler(this.dgvTulajdonosok_SelectionChanged);
             // 
             // menuStrip1
@@ -108,8 +111,8 @@
             this.összesTulajdonosListázásaToolStripMenuItem,
             this.tulajdonosKereséseToolStripMenuItem});
             this.szerkesztésToolStripMenuItem.Name = "szerkesztésToolStripMenuItem";
-            this.szerkesztésToolStripMenuItem.Size = new System.Drawing.Size(77, 20);
-            this.szerkesztésToolStripMenuItem.Text = "Szerkesztés";
+            this.szerkesztésToolStripMenuItem.Size = new System.Drawing.Size(78, 20);
+            this.szerkesztésToolStripMenuItem.Text = "Tulajdonos";
             // 
             // tulajdonosokToolStripMenuItem
             // 

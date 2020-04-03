@@ -9,3 +9,4 @@ D:\!Egyetem\2019-2020\2. félév\Magasszintű programozási nyelvek II\AllatOrvo
 D:\!Egyetem\2019-2020\2. félév\Magasszintű programozási nyelvek II\AllatOrvosiNyilvantarto\AllatOrvosiNyilvantarto\obj\Debug\AllatOrvosiNyilvantarto.csproj.CoreCompileInputs.cache
 D:\!Egyetem\2019-2020\2. félév\Magasszintű programozási nyelvek II\AllatOrvosiNyilvantarto\AllatOrvosiNyilvantarto\obj\Debug\AllatOrvosiNyilvantarto.exe
 D:\!Egyetem\2019-2020\2. félév\Magasszintű programozási nyelvek II\AllatOrvosiNyilvantarto\AllatOrvosiNyilvantarto\obj\Debug\AllatOrvosiNyilvantarto.pdb
+D:\!Egyetem\2019-2020\2. félév\Magasszintű programozási nyelvek II\AllatOrvosiNyilvantarto\AllatOrvosiNyilvantarto\obj\Debug\AllatOrvosiNyilvantarto.TulajdonosMegtekintes.resources
