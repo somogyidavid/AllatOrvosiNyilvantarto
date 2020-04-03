@@ -72,6 +72,7 @@ namespace AllatOrvosiNyilvantarto
                 }
             }
             else MessageBox.Show("A lista üres!","Hiba");
+            dgvTulajdonosok.Rows[0].Selected = false;
             dgvTulajdonosok.AutoResizeColumns();
         }
 
@@ -136,12 +137,35 @@ namespace AllatOrvosiNyilvantarto
                         foreach (Tulajdonos tulajdonos in Tulajdonosok.TulajdonosokLista)
                         {
                             if (tulajdonos.Id == Id)
-                                MessageBox.Show("Details ablak");
+                            {
+                                TulajdonosMegtekintes TM = new TulajdonosMegtekintes();
+                                TM.ShowDialog();
+                                dgvTulajdonosok.SelectedRows[0].Selected = false;
+                            }
                         }
                     }
                 }
             }
-            SelectionChangedByMe = true;
+            SelectionChangedByMe = true; 
+        }
+
+        private void dgvTulajdonosok_CellMouseMove(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            DataGridView dgv = sender as DataGridView;
+            switch (dgv.Columns[e.ColumnIndex].Name)
+            {
+                case "dgvbcModosit":
+                    dgvTulajdonosok.SelectionMode = DataGridViewSelectionMode.RowHeaderSelect;
+                    break;
+                case "dgvbcTorol":
+                    dgvTulajdonosok.SelectionMode = DataGridViewSelectionMode.RowHeaderSelect;
+                    break;
+            }
+        }
+
+        private void dgvTulajdonosok_CellMouseLeave(object sender, DataGridViewCellEventArgs e)
+        {
+            dgvTulajdonosok.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
         }
     }
 }
