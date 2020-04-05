@@ -26,5 +26,9 @@ namespace AllatOrvosiNyilvantarto.Classes
 		{
 			tulajdonosok.Add(new Tulajdonos(++ID, Vnev, Knev, SzulIdo, Irszam, Varos, Lakcim, MobilSzam, Email));
 		}
+		public static void TulajdonosTorles(Tulajdonos tulajdonos)
+		{
+			tulajdonosok.Remove(tulajdonos);
+		}
 	}
 }
