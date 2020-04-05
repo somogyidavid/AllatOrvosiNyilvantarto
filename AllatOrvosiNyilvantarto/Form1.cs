@@ -14,6 +14,7 @@ namespace AllatOrvosiNyilvantarto
     public partial class Form1 : Form
     {
         private bool SelectionChangedByMe = false;
+        private uint ID = 0;
 
         public Form1()
         {
@@ -49,9 +50,7 @@ namespace AllatOrvosiNyilvantarto
             dgvTulajdonosok.Columns.Add("Vnev", "Vezetéknév");
             dgvTulajdonosok.Columns.Add("Knev", "Keresztnév");
             dgvTulajdonosok.Columns.Add("SzulDatum", "Születési dátum");
-            dgvTulajdonosok.Columns.Add("Irszam", "Irányítószám");
             dgvTulajdonosok.Columns.Add("Varos", "Város");
-            dgvTulajdonosok.Columns.Add("Lakcim", "Lakcím");
             dgvTulajdonosok.Columns.Add("MobilSzam", "Mobilszám");
             dgvTulajdonosok.Columns.Add("Email", "Email");
 
@@ -67,9 +66,9 @@ namespace AllatOrvosiNyilvantarto
                 {
                     if(tulajdonos.Email == null)
                         dgvTulajdonosok.Rows.Add(new object[] { tulajdonos.Id, tulajdonos.Vnev, tulajdonos.Knev, tulajdonos.SzulDatum.ToString("yyyy.mm.dd"),
-                            tulajdonos.Irszam, tulajdonos.Varos,tulajdonos.Lakcim,tulajdonos.MobilSzam,"-"});
+                            tulajdonos.Varos,tulajdonos.MobilSzam,"-"});
                     else dgvTulajdonosok.Rows.Add(new object[] { tulajdonos.Id, tulajdonos.Vnev, tulajdonos.Knev, tulajdonos.SzulDatum,
-                            tulajdonos.Irszam, tulajdonos.Varos,tulajdonos.Lakcim,tulajdonos.MobilSzam, tulajdonos.Email});
+                            tulajdonos.Varos,tulajdonos.MobilSzam, tulajdonos.Email});
                 }
             }
             else MessageBox.Show("A lista üres!","Hiba");
@@ -117,7 +116,9 @@ namespace AllatOrvosiNyilvantarto
             switch (dgv.Columns[e.ColumnIndex].Name)
             {
                 case "dgvbcModosit":
-                    MessageBox.Show("Módosító ablak");
+                    ID = Convert.ToUInt32(dgv.Rows[e.RowIndex].Cells["Id"].Value.ToString());
+                    TulajdonosModositas TMO = new TulajdonosModositas(ID);
+                    TMO.ShowDialog();
                     break;
                 case "dgvbcTorol":
                     MessageBox.Show("Törlés visszakérdezés");

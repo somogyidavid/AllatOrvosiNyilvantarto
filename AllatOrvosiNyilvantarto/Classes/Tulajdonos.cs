@@ -152,14 +152,21 @@ namespace AllatOrvosiNyilvantarto
 			get { return email; }
 			set
 			{
-				try
+				if(value == null || value == string.Empty)
 				{
-					MailAddress MA = new MailAddress(value.ToString());
-					email = value;
+					email = null;
 				}
-				catch (FormatException)
+				else
 				{
-					throw new Exception("Nem megfelelő email formátum!");
+					try
+					{
+						MailAddress MA = new MailAddress(value.ToString());
+						email = value;
+					}
+					catch (FormatException)
+					{
+						throw new Exception("Nem megfelelő email formátum!");
+					}
 				}
 			}
 		}

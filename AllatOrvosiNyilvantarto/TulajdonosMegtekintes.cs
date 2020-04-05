@@ -13,6 +13,7 @@ namespace AllatOrvosiNyilvantarto
 {
     public partial class TulajdonosMegtekintes : Form
     {
+        private uint ID = 0;
         public TulajdonosMegtekintes(int Id)
         {
             InitializeComponent();
@@ -30,6 +31,7 @@ namespace AllatOrvosiNyilvantarto
                     lblLakcim.Text = tulajdonos.Lakcim;
                     lblMobilSzam.Text = tulajdonos.MobilSzam;
                     lblEmail.Text = tulajdonos.Email == null ? "-" : tulajdonos.Email;
+                    ID = tulajdonos.Id;
                 }
             }
         }
@@ -41,7 +43,8 @@ namespace AllatOrvosiNyilvantarto
 
         private void btnModositas_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Módosító ablak!");
+            TulajdonosModositas TMO = new TulajdonosModositas(ID);
+            TMO.ShowDialog();
         }
 
         private void btnTorles_Click(object sender, EventArgs e)
